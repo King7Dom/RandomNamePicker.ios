@@ -160,7 +160,7 @@
 				TargetAttributes = {
 					180EEC3C1EB0FE8F00C69733 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 5FV675SN9E;
+						DevelopmentTeam = 2LJ6NU7GDJ;
 						ProvisioningStyle = Automatic;
 					};
 					180EEC501EB0FE8F00C69733 = {
@@ -359,8 +359,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5FV675SN9E;
+				DEVELOPMENT_TEAM = 2LJ6NU7GDJ;
 				INFOPLIST_FILE = RandomNamePicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.King7Dom.RandomNamePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -372,8 +373,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5FV675SN9E;
+				DEVELOPMENT_TEAM = 2LJ6NU7GDJ;
 				INFOPLIST_FILE = RandomNamePicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.King7Dom.RandomNamePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
