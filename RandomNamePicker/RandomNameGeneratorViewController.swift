@@ -11,6 +11,8 @@ import UIKit
 class RandomNameGeneratorViewController: UIViewController {
     
     // MARK: - Property
+
+    private var timer: Timer?
     
     // MARK: View
     
@@ -31,15 +33,6 @@ class RandomNameGeneratorViewController: UIViewController {
         setupPeople()
         setupView()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        guard let firstPerson = people.first else { return }
-        transition(
-            to: firstPerson,
-            options: [.transitionFlipFromRight, .repeat])
-    }
 
     // MARK: - View Setup
     
@@ -58,7 +51,7 @@ class RandomNameGeneratorViewController: UIViewController {
             nameLabel.text = firstPerson.name
             profileImageView.image = UIImage(named: firstPerson.profilePictureName)
         }
-        actionButton.setTitle("Pick name", for: .normal)
+        actionButton.setTitle("Pick a name", for: .normal)
     }
     
     // MARK: - Transition
@@ -72,5 +65,38 @@ class RandomNameGeneratorViewController: UIViewController {
                 self.nameLabel.text = person.name
                 self.profileImageView.image = UIImage(named: person.profilePictureName) },
             completion: completion)
+    }
+
+    // MARK: - Action
+
+    @IBAction func didTouchUpInside(_ sender: UIButton) {
+        toggleGenerator()
+    }
+
+    // MARK: - Random Name Generator
+
+    func toggleGenerator() {
+        timer == nil ? startGenerator() : stopGenerator()
+    }
+
+    func stopGenerator() {
+        timer?.invalidate()
+        timer = nil
+        actionButton.setTitle("Pick a name", for: .normal)
+    }
+
+    func startGenerator() {
+        timer?.invalidate() // Invalidate any existing timer
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+            self.timer = timer
+            self.transition(
+                to: self.randomPerson(fromPeople: self.people),
+                options: [.transitionFlipFromRight])
+        }
+        actionButton.setTitle("Stop", for: .normal)
+    }
+
+    private func randomPerson(fromPeople people: [Person]) -> Person {
+        return people[Int(arc4random_uniform(UInt32(people.count)))]
     }
 }
