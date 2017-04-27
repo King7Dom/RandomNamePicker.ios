@@ -54,7 +54,7 @@ class RandomNameGeneratorViewController: UIViewController {
     
     // MARK: - Transition
     
-    private func transition(to person: Person, duration: TimeInterval = 0.5, options: UIViewAnimationOptions, completion: ((Bool) -> Void)? = nil) {
+    private func transition(to person: Person, duration: TimeInterval = 0.2, options: UIViewAnimationOptions, completion: ((Bool) -> Void)? = nil) {
         UIView.transition(
             with: peopleCardView,
             duration: duration,
@@ -85,7 +85,7 @@ class RandomNameGeneratorViewController: UIViewController {
 
     func startGenerator() {
         timer?.invalidate() // Invalidate any existing timer
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { timer in
             self.timer = timer
             self.transition(
                 to: self.randomPerson(fromPeople: self.people),
