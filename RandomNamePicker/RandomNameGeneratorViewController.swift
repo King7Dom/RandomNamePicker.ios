@@ -47,10 +47,8 @@ class RandomNameGeneratorViewController: UIViewController {
     }
     
     private func setupView() {
-        if let firstPerson = people.first {
-            nameLabel.text = firstPerson.name
-            profileImageView.image = UIImage(named: firstPerson.profilePictureName)
-        }
+        nameLabel.text = "Lucky Team Member"
+        profileImageView.image = UIImage(named: "Akhil")
         actionButton.setTitle("Pick a name", for: .normal)
     }
     
