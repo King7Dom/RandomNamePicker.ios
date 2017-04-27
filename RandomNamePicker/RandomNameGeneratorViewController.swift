@@ -49,7 +49,13 @@ class RandomNameGeneratorViewController: UIViewController {
     // MARK: - View Setup
     
     private func setupPeople() {
-        people.append(Person(name: "Dominic"))
+        people.append(Person(name: "Akhil"))
+        people.append(Person(name: "Bruno"))
+        people.append(Person(name: "Carlo"))
+        people.append(Person(name: "Faizal"))
+        people.append(Person(name: "Razvan"))
+        people.append(Person(name: "Sanal"))
+        people.append(Person(name: "Tim"))
     }
     
     private func setupView() {
