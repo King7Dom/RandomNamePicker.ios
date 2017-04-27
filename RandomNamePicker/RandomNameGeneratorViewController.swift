@@ -41,11 +41,6 @@ class RandomNameGeneratorViewController: UIViewController {
             options: [.transitionFlipFromRight, .repeat])
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // MARK: - View Setup
     
     private func setupPeople() {
